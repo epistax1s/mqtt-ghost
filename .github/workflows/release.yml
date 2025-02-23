@@ -6,6 +6,8 @@ on:
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
+    environment: env_context
+
     steps:
       - uses: actions/checkout@v4
 
@@ -34,7 +36,7 @@ jobs:
 
       - name: Create Release and Upload JAR
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
         run: |
           VERSION="${{ steps.get_version.outputs.VERSION }}"
           JAR_FILE="${{ steps.get_version.outputs.JAR_FILE }}"
