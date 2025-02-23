@@ -6,9 +6,7 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+    environment: env_context
 
     steps:
       - uses: actions/checkout@v4
