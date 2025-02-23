@@ -22,14 +22,12 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Debug environment variables
-        run: |
-          echo "GITHUB_ACTOR=$GITHUB_ACTOR"
-          masked_token=$(echo "$GITHUB_TOKEN" | sed -E 's/.(?=.{4})/*/g')
-          echo "GITHUB_TOKEN=$masked_token"
-
       - name: Publish to GitHub Packages
-        run: ./gradlew publishShadowPublicationToGitHubPackagesRepository
+        run: |
+          run: |
+          echo "GITHUB_ACTOR=$GITHUB_ACTOR"
+          echo "GITHUB_TOKEN=${GITHUB_TOKEN:0:6}..."
+          ./gradlew publishShadowPublicationToGitHubPackagesRepository
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.PACKAGE_WRITE_TOKEN }}
