@@ -21,11 +21,7 @@ jobs:
         run: ./gradlew build
 
       - name: Publish to GitHub Packages
-        run: |
-          run: |
-          echo "GITHUB_ACTOR=$GITHUB_ACTOR"
-          echo "GITHUB_TOKEN=${GITHUB_TOKEN:0:6}..."
-          ./gradlew publishShadowPublicationToGitHubPackagesRepository
+        run: ./gradlew publishShadowPublicationToGitHubPackagesRepository
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.PACKAGE_WRITE_TOKEN }}
