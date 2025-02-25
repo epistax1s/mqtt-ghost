@@ -36,7 +36,15 @@ OpenJDK Runtime Environment (build 21.0.2+13-58)
 OpenJDK 64-Bit Server VM (build 21.0.2+13-58, mixed mode, sharing)
 ```
 
-### 2. Build the Project
+#### 2. Clone the Project
+
+Clone the mqtt-mimic repository from GitHub:
+
+```bash
+git clone git@github.com:epistax1s/mqtt-mimic.git
+```
+
+### 3. Build the Project
 
 Navigate to the project directory:
 
@@ -53,7 +61,7 @@ Clean and build the JAR file using the Gradle Wrapper:
 
 This creates an executable JAR at build/libs/mqtt-mimic-1.0-SNAPSHOT-all.jar.
 
-### 3. Run the Utility
+### 4. Run the Utility
 
 Launch the utility with your client_config.groovy file:
 
@@ -66,4 +74,3 @@ java -jar build/libs/mqtt-mimic-1.0-SNAPSHOT-all.jar ./client_config.groovy
 - The project uses the Gradle Wrapper (`./gradlew`), so a separate Gradle installation is not required.
 - Check `example/client_config.groovy` for a sample configuration.
 - Detailed configuration and usage instructions are available in the separate documentation.
-G

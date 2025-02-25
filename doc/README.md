@@ -1,41 +1,39 @@
 # Website
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This site is built with [Docusaurus](https://docusaurus.io/), a static site generator for documentation.
+
+### Prerequisites
+
+* `Node.js` (16.x+)
+* `npm`
 
 ### Installation
 
+```bash
+npm install
 ```
-$ yarn
-```
+
+Installs dependencies from package.json.
 
 ### Local Development
 
 ```
-$ yarn start
+npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Starts a local server at http://localhost:3000/mqtt-mimic/ with live reloading.
 
 ### Build
 
 ```
-$ yarn build
+npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Generates static files in the `build/` directory. The deployment to GitHub Pages is handled by a GitHub Action located in
+`.github/workflows/docs.yaml`.
 
-### Deployment
+Preview the build locally:
 
-Using SSH:
-
+```bash
+npm run serve
 ```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
