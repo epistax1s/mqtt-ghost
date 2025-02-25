@@ -40,7 +40,7 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                        'https://github.com/epistax1s/mqtt-mimic/tree/master/doc',
                 },
                 blog: false,
                 theme: {
@@ -53,7 +53,8 @@ const config: Config = {
     themeConfig: {
         colorMode: {
             defaultMode: 'dark',
-            respectPrefersColorScheme: true
+            disableSwitch: false, // The theme switcher remains available
+            respectPrefersColorScheme: false // Ignore system theme settings
         },
         navbar: {
             title: 'MQTT Mimic',
