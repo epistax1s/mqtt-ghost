@@ -1,4 +1,4 @@
-# mqtt-mimic
+# MQTT Mimic
 
 Documentation is available at [https://epistax1s.github.io/mqtt-mimic](https://epistax1s.github.io/mqtt-mimic).
 
@@ -33,7 +33,7 @@ Place the downloaded JAR and your `client_config.groovy` file in the same direct
 java -jar mqtt-mimic-1.0.jar ./client_config.groovy
 ```
 
-Enjoy emulating smart devices over MQTT with mqtt-mimic 😊!
+Enjoy emulating smart devices over MQTT with MQTT Mimic 😊!
 
 
 ## Or ... build From Source

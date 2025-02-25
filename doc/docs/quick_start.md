@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Quick Start
 
-This section provides the fastest way to get started with mqtt-mimic by downloading a pre-built JAR file from GitHub 
+This section provides the fastest way to get started with MQTT Mimic by downloading a pre-built JAR file from GitHub 
 Releases, skipping the build process.
 
 ## Prerequisites
