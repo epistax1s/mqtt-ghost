@@ -1,0 +1,120 @@
+---
+sidebar_position: 3
+---
+
+# DSL: Key Ideas and Purpose
+
+## Introduction
+
+The utility uses a Domain-Specific Language (DSL) based on Groovy to configure and manage an MQTT client. Each DSL file 
+defines a single client, including its connection to the broker, message publishing, topic subscriptions, and other actions.
+
+:::tip Groovy :)
+
+Built on Groovy, a scripting language for the JVM, this DSL offers great flexibility. You can write custom functions and
+code directly in the DSL file on the fly, adapting logic, processing data, or prototyping quickly without limits.
+
+:::
+
+The DSL comprises four main components that allow you to flexibly configure the client's behavior:
+
+- **connect**: Sets up the connection to the MQTT broker (host, port, credentials, SSL).
+- **publish**: Publishes messages to topics with configurable payload, QoS, retained flag, and scheduling options.
+- **subscribe**: Subscribes to topics and processes incoming messages using Groovy code.
+- **action**: Defines a named code block that can be invoked from other parts of the DSL or scheduled to run periodically.
+
+## Overview of Components
+
+### 1. Connect
+
+The `connect` component is used to configure the connection parameters for the MQTT broker. Within this block, you specify 
+the details required to establish a connection, such as host, port, credentials, and SSL settings (if needed).
+
+**Syntax**:
+
+```groovy
+connect {
+    host = "broker.hivemq.com"
+    port = 1883
+}
+```
+
+### 2. Subscribe
+
+The `subscribe` component enables you to subscribe to MQTT topics and handle incoming messages using custom logic. When
+a message arrives on the specified topic, the provided closure is executed to process the data.
+
+**Syntax**:
+
+```groovy
+subscribe("topic_pattern") { msg ->
+    // Message processing logic
+}
+```
+
+### 3. Publish
+
+The `publish` component allows you to configure the publishing of messages to an MQTT topic. You can specify the topic,
+payload, QoS, retained flag, and even set up scheduling and pre-/post-execution code.
+
+**Syntax**:
+
+```groovy
+publish("action_name") {
+    topic = "your/topic"
+    payload = "your_message"
+    qos = qos_level // 0, 1, or 2
+    retain = true/false
+    schedule {
+        interval = interval_in_millis
+        startImmediately = true/false
+    }
+}
+```
+
+### 4. Action
+
+The action component lets you create named code blocks that can be invoked from other parts of the DSL or scheduled for 
+periodic execution.
+
+**Syntax**:
+
+```groovy
+action('action_name') {
+    // Any Groovy code
+}
+```
+
+## Interactions Between Components
+
+The DSL components can interact with one another, enabling the creation of complex and flexible scenarios. For example:
+
+- **From subscribe**: You can trigger a `publish` or an `action`. When a message is received on a specific topic, it can 
+activate a message publication or execute a named action.
+- **From action**: You can call other `action` blocks or trigger a `publish` operation. Named actions can include logic 
+that invokes other actions or publishes messages.
+- **Chaining publish calls**: A `publish` operation can be configured to automatically trigger another publish after 
+sending a message.
+- **And so on**.
+
+## Leveraging Groovy for Flexibility
+
+Built on Groovy, a scripting language for the JVM, this DSL lets you write custom functions and code directly in the DSL
+file. This means you can adapt the client’s behavior on the fly – adding logic, creating variables, processing data, or
+prototyping – without being limited to predefined commands.
+
+```groovy
+def logMessage(String text) {
+    println "Log: $text"
+}
+
+def messageCount = 0  // Variable to track received messages
+
+subscribe("test/topic") { msg ->
+    messageCount++    // Increment the counter
+    logMessage("Message #$messageCount received: ${msg.payloadAsString}")
+}
+```
+
+In this example, a messageCount variable is defined to track the number of received messages, and a logMessage function
+is used to print logs with the counter.

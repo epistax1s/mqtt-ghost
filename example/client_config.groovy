@@ -39,6 +39,16 @@ subscribe("mqtt-mimic/${env.prefix}/greetings") { msg ->
     """
 }
 
+action("action_xxx") {
+    justDo = {
+        println "hello action_xxx"
+    }
+    schedule {
+        interval = 5_000
+        startImmediately = true
+    }
+}
+
 subscribe("mqtt-mimic/${env.prefix}/on") { msg ->
     activateAction("sendHello")
 }
