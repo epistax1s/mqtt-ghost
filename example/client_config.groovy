@@ -20,7 +20,7 @@ publish("sendHello") {
     before = {
         println("before")
     }
-    topic = "mqtt-mimic/${env.prefix}/greetings"
+    topic = "mqtt-ghost/${env.prefix}/greetings"
     payload = "Hello, world! Dynamic message = ${UUID.randomUUID().toString()}"
     qos = 1
     retain = false
@@ -30,7 +30,7 @@ publish("sendHello") {
     }
 }
 
-subscribe("mqtt-mimic/${env.prefix}/greetings") { msg ->
+subscribe("mqtt-ghost/${env.prefix}/greetings") { msg ->
     println """
     Receive message!
     Topic : ${msg.topic}
@@ -49,10 +49,10 @@ action("action_xxx") {
     }
 }
 
-subscribe("mqtt-mimic/${env.prefix}/on") { msg ->
+subscribe("mqtt-ghost/${env.prefix}/on") { msg ->
     activateAction("sendHello")
 }
 
-subscribe("mqtt-mimic/${env.prefix}/off") { msg ->
+subscribe("mqtt-ghost/${env.prefix}/off") { msg ->
     deactivateAction("sendHello")
 }

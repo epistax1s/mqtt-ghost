@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Build from Source
 
-This section explains how to build and run `mqtt-mimic`.
+This section explains how to build and run `mqtt-ghost`.
 
 ## Prerequisites
 
@@ -38,10 +38,10 @@ OpenJDK 64-Bit Server VM (build 21.0.2+13-58, mixed mode, sharing)
 
 #### 2. Clone the Project
 
-Clone the mqtt-mimic repository from GitHub:
+Clone the mqtt-ghost repository from GitHub:
 
 ```bash
-git clone git@github.com:epistax1s/mqtt-mimic.git
+git clone git@github.com:epistax1s/mqtt-ghost.git
 ```
 
 ### 3. Build the Project
@@ -49,7 +49,7 @@ git clone git@github.com:epistax1s/mqtt-mimic.git
 Navigate to the project directory:
 
 ```bash
-cd mqtt-mimic
+cd mqtt-ghost
 ```
 
 Clean and build the JAR file using the Gradle Wrapper:
@@ -59,14 +59,14 @@ Clean and build the JAR file using the Gradle Wrapper:
 ./gradlew shadowJar
 ```
 
-This creates an executable JAR at build/libs/mqtt-mimic-1.0-SNAPSHOT-all.jar.
+This creates an executable JAR at build/libs/mqtt-ghost-1.0-SNAPSHOT-all.jar.
 
 ### 4. Run the Utility
 
 Launch the utility with your client_config.groovy file:
 
 ```bash
-java -jar build/libs/mqtt-mimic-1.0-SNAPSHOT-all.jar ./client_config.groovy
+java -jar build/libs/mqtt-ghost-1.0-SNAPSHOT-all.jar ./client_config.groovy
 ```
 
 ### Notes

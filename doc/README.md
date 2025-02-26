@@ -21,7 +21,7 @@ Installs dependencies from package.json.
 npm start
 ```
 
-Starts a local server at http://localhost:3000/mqtt-mimic/ with live reloading.
+Starts a local server at http://localhost:3000/mqtt-ghost/ with live reloading.
 
 ### Build
 

@@ -23,13 +23,13 @@ jobs:
       - name: Get Version from JAR Filename
         id: get_version
         run: |
-          JAR_FILE=$(ls build/libs/mqtt-mimic-*.jar | head -n 1)
+          JAR_FILE=$(ls build/libs/mqtt-ghost-*.jar | head -n 1)
           if [ -z "$JAR_FILE" ]; then
             echo "No JAR file found in build/libs/"
             exit 1
           fi
           
-          VERSION=$(basename "$JAR_FILE" | sed 's/mqtt-mimic-\(.*\)\.jar/\1/')
+          VERSION=$(basename "$JAR_FILE" | sed 's/mqtt-ghost-\(.*\)\.jar/\1/')
           echo "Extracted version: $VERSION"
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
           echo "JAR_FILE=$JAR_FILE" >> $GITHUB_OUTPUT
@@ -48,7 +48,7 @@ jobs:
           
           gh release create "v${VERSION}" \
             --title "Release v${VERSION}" \
-            --notes "Automated release of mqtt-mimic v${VERSION}" \
+            --notes "Automated release of mqtt-ghost v${VERSION}" \
             --draft=false
           
           gh release upload "v${VERSION}" "$JAR_FILE" --clobber

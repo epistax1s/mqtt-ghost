@@ -8,7 +8,7 @@ import space.left4dev.handler.ActionManager
 import space.left4dev.handler.MqttClientHandler
 import space.left4dev.mqtt.HiveMqttClient
 
-class MimicApp {
+class GhostApp {
     static void main(String[] args) {
         if (args.length == 0) {
             println "Usage: groovy Main.groovy <config_file.groovy>"

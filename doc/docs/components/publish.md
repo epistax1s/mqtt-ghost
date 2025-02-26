@@ -33,7 +33,7 @@ This creates a `publish` action named `"sendHello"` that sends `"Hello, world!"`
 
 **Example**:
 ```groovy
-topic = "mqtt-mimic/test/greetings"
+topic = "mqtt-ghost/test/greetings"
 ```
 ### 2. `payload`
 
@@ -207,7 +207,7 @@ env.prefix = UUID.randomUUID().toString()
 
 publish("sendHello") {
     before = { println "Before sending..." }
-    topic = "mqtt-mimic/${env.prefix}/greetings"
+    topic = "mqtt-ghost/${env.prefix}/greetings"
     payload = "Hello! ID: ${UUID.randomUUID()}"
     qos = 1
     retain = false
@@ -218,12 +218,12 @@ publish("sendHello") {
     after = { println "Message sent!" }
 }
 
-subscribe("mqtt-mimic/${env.prefix}/on") { msg ->
+subscribe("mqtt-ghost/${env.prefix}/on") { msg ->
     // Starts periodic publishing
     activateAction("sendHello")  
 }
 
-subscribe("mqtt-mimic/${env.prefix}/off") { msg ->
+subscribe("mqtt-ghost/${env.prefix}/off") { msg ->
     // Stops the schedule; no messages are published until reactivated or triggered manually
     deactivateAction("sendHello")
 }

@@ -23,16 +23,16 @@ dependencies {
 }
 
 application {
-    mainClass = 'space.left4dev.MimicApp'
+    mainClass = 'space.left4dev.GhostApp'
 }
 
 sourceCompatibility = 21
 targetCompatibility = 21
 
 shadowJar {
-    archiveFileName = "mqtt-mimic-${version}.jar"
+    archiveFileName = "mqtt-ghost-${version}.jar"
     manifest {
-        attributes 'Main-Class': 'space.left4dev.MimicApp'
+        attributes 'Main-Class': 'space.left4dev.GhostApp'
     }
 }
 
@@ -40,7 +40,7 @@ publishing {
     repositories {
         maven {
             name 'GitHubPackages'
-            url "https://maven.pkg.github.com/epistax1s/mqtt-mimic"
+            url "https://maven.pkg.github.com/epistax1s/mqtt-ghost"
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
@@ -53,12 +53,12 @@ publishing {
                 classifier = ""
             }
             groupId = project.group
-            artifactId = "mqtt-mimic"
+            artifactId = "mqtt-ghost"
             version = project.version
             pom {
-                name.set("mqtt-mimic")
-                description.set("MQTT client mimic tool")
-                url.set("https://github.com/epistax1s/mqtt-mimic")
+                name.set("mqtt-ghost")
+                description.set("MQTT client ghost tool")
+                url.set("https://github.com/epistax1s/mqtt-ghost")
                 licenses {
                     license {
                         name.set("MIT License")
@@ -73,9 +73,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection.set("scm:git:git://github.com/epistax1s/mqtt-mimic.git")
-                    developerConnection.set("scm:git:ssh://github.com/epistax1s/mqtt-mimic.git")
-                    url.set("https://github.com/epistax1s/mqtt-mimic")
+                    connection.set("scm:git:git://github.com/epistax1s/mqtt-ghost.git")
+                    developerConnection.set("scm:git:ssh://github.com/epistax1s/mqtt-ghost.git")
+                    url.set("https://github.com/epistax1s/mqtt-ghost")
                 }
             }
         }

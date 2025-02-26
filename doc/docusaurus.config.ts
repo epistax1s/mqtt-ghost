@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-    title: 'MQTT Mimic',
+    title: 'MQTT Ghost',
     tagline: 'Dinosaurs are cool',
     favicon: 'img/favicon.ico',
 
@@ -13,12 +13,12 @@ const config: Config = {
     url: 'https://epistax1s.github.io',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
-    baseUrl: '/mqtt-mimic/',
+    baseUrl: '/mqtt-ghost/',
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
-    organizationName: 'epistax1s', // Usually your GitHub org/user name.
-    projectName: 'mqtt-mimic', // Usually your repo name.
+    organizationName: 'epistax1s', // Usually your GitHub org/username.
+    projectName: 'mqtt-ghost', // Usually your repo name.
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -40,7 +40,7 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/epistax1s/mqtt-mimic/tree/master/doc',
+                        'https://github.com/epistax1s/mqtt-ghost/tree/master/doc',
                 },
                 blog: false,
                 theme: {
@@ -57,9 +57,9 @@ const config: Config = {
             respectPrefersColorScheme: false // Ignore system theme settings
         },
         navbar: {
-            title: 'MQTT Mimic',
+            title: 'MQTT Ghost',
             logo: {
-                alt: 'MQTT Mimic Logo',
+                alt: 'MQTT Ghost Logo',
                 src: 'img/logo.svg',
             },
             items: [
@@ -70,7 +70,7 @@ const config: Config = {
                     label: 'Docs',
                 },
                 {
-                    href: 'https://github.com/epistax1s/mqtt-mimic',
+                    href: 'https://github.com/epistax1s/mqtt-ghost',
                     label: 'GitHub',
                     position: 'right',
                 },

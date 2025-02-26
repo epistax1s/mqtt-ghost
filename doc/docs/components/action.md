@@ -123,11 +123,11 @@ action("logTime") {
     }
 }
 
-subscribe("mqtt-mimic/${env.prefix}/on") { msg ->
+subscribe("mqtt-ghost/${env.prefix}/on") { msg ->
     activateAction("logTime")
 }
 
-subscribe("mqtt-mimic/${env.prefix}/off") { msg ->
+subscribe("mqtt-ghost/${env.prefix}/off") { msg ->
     deactivateAction("logTime")
 }
 ```

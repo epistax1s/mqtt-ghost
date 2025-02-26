@@ -26,7 +26,7 @@ Subscribes to the `greetings` topic and prints the message content.
 * **Description**: The MQTT topic filter (supports `+` and `#` or dynamic Groovy expressions).
 * **Type**: String.
 * **Required**: Yes.
-* **Example**: `"mqtt-mimic/${env.prefix}/greetings"`
+* **Example**: `"mqtt-ghost/${env.prefix}/greetings"`
 
 ### 2. `handler`
 
@@ -72,7 +72,7 @@ subscribe("greetings") { msg ->
 
 ```groovy
 env.prefix = UUID.randomUUID().toString()
-subscribe("mqtt-mimic/${env.prefix}/greetings") { msg ->
+subscribe("mqtt-ghost/${env.prefix}/greetings") { msg ->
     println "Topic: ${msg.topic}, Data: ${msg.payload}"
 }
 ```
@@ -90,11 +90,11 @@ subscribe("sensors/#") { msg ->
 ```groovy
 env.prefix = UUID.randomUUID().toString()
 publish("sendHello") {
-    topic = "mqtt-mimic/${env.prefix}/greetings"
+    topic = "mqtt-ghost/${env.prefix}/greetings"
     payload = "Hello!"
     schedule { interval = 5_000; startImmediately = false }
 }
-subscribe("mqtt-mimic/${env.prefix}/on") { msg ->
+subscribe("mqtt-ghost/${env.prefix}/on") { msg ->
     activateAction("sendHello")
 }
 ```
