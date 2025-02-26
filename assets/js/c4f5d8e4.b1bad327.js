@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdoc=self.webpackChunkdoc||[]).push([[634],{9179:(t,c,s)=>{s.r(c),s.d(c,{default:()=>r});s(6540);var u=s(6347),e=s(4848);function r(){return(0,e.jsx)(u.rd,{to:"/mqtt-mimic/docs/quick_start"})}}}]);

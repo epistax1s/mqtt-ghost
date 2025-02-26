@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdoc=self.webpackChunkdoc||[]).push([[634],{9179:(t,s,c)=>{c.r(s),c.d(s,{default:()=>r});c(6540);var u=c(6347),e=c(4848);function r(){return(0,e.jsx)(u.rd,{to:"/mqtt-ghost/docs/quick_start"})}}}]);
